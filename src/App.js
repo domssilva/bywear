@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {Switch, Route, withRouter} from 'react-router-dom';
 
-import Home from './pages/Home';
-import Location from './pages/Location';
-import Store from './pages/Store';
-import Checkout from './pages/Checkout';
-import Error from './pages/Error';
+import Home from './pages/Home/';
+import Location from './pages/Location/';
+import Store from './pages/Store/';
+import Checkout from './pages/Checkout/';
+import Error from './pages/Error/';
 
 // this data will be fetched from contentful
-import merchList from './components/Product.data';
+import merchList from './data/Product.data';
 // this data will be fetched from contentful
 
 function App() {

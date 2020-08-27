@@ -1,0 +1,168 @@
+@import '../../assets/sass/imports';
+
+.product {
+
+  &__container {
+      color: $white;
+      background: $grey-dark;
+      border-radius: $border-radius;
+      padding: 2rem;
+
+      display: flex;
+
+      @include adapt(tablet) {
+          max-width: 50rem;
+          margin: 0 auto;
+      }
+
+      @include adapt(phone) {
+          flex-direction: column;
+      }
+  }
+
+  // [LEFT SIDE] call to action
+  &__cta {
+      
+      max-width: 25rem;
+      padding-right: inherit;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include adapt(tablet) {
+          padding: 0;
+      }
+
+      &-img {
+          width: 100%;
+          height: 20rem;
+          object-fit: cover;
+          display: block;
+          margin-bottom: 2rem;
+      }
+
+      &-price {
+          display: inline-block;
+          align-self: center;
+          padding-bottom: 5rem;
+      }
+
+      &-price {
+          font-size: 3rem;
+          font-weight: 600;
+          color: $primary-1;
+
+          @include adapt(phone) {
+              padding: 1rem;
+          }
+      }
+
+      &-submit {
+          cursor: pointer;
+      }
+  }
+
+  // [RIGHT SIDE] product info
+  &__info {
+      flex-grow: 1;
+      padding-left: inherit;
+      
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @include adapt(phone) {
+          padding-left: 0;
+          align-items: center;
+      }
+
+      &-top {
+          min-height: 15rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          @include adapt(phone) {
+              text-align: center;
+              margin-top: 1rem;
+          }
+      }
+
+      &-bottom {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-evenly;
+      }
+
+      &-name {
+          font-size: 2rem;
+      }
+
+      &-rating {
+          $starsize: 1.8rem;
+          
+          svg {
+              height: $starsize;
+              width: $starsize;
+              fill: #ffe600;
+
+              &:not(:last-of-type) {
+                  margin-right: .5rem;
+              }
+          }
+      }
+
+      &-about {
+          width: 70%;
+          max-width: 20.5rem;
+          line-height: 1.3;
+          font-size: 1.35rem;
+
+          @include adapt(phone) {
+              width: 100%;
+          }
+      }
+
+      &-input {
+
+          font-size: 1.3rem;
+          display: grid;
+          grid-gap: 1rem;
+          grid-template-columns: repeat(3, 2.5rem);
+
+          @include adapt(phone) {
+              grid-template-columns: repeat(5, 2.5rem);
+              margin: 0 auto;
+          }
+
+          &-label {
+              cursor: pointer;
+
+              width: 2.5rem;
+              height: 2.5rem;
+              border: 1px solid $white;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              transition: background-color .2s linear;
+              background-color: transparent;
+              color: $white;
+          }
+
+          &-radio {
+              display: none;
+          }
+
+          &-radio:checked + &-label {
+              color: $black;
+              background-color: $white;
+          }
+      }
+
+  }
+}
