@@ -1,0 +1,16 @@
+.content {
+  position: relative;
+  z-index: 100;
+
+  background: $blue-dark;
+  padding: 2.5rem 3.5rem;
+  flex: 1;
+
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+
+  @include adapt(phone) {
+    padding: 2rem 0 6rem 0;
+  }
+
+}

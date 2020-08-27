@@ -1,0 +1,41 @@
+.photo {
+
+  background-color: $primary-1;
+  position: relative;
+
+  &__container {
+    width: 100%;
+
+    @include adapt(phone) {
+      height: 70rem;
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    
+    height: 100%;
+    width: 100%;
+    
+    object-fit: cover;
+    object-position: top;
+    
+    transition: all 2s cubic-bezier(0,.56,.99,.57);
+    opacity: 0;
+
+    &.selected {
+      z-index: 10;
+
+      opacity: 1;
+    }
+
+    @include adapt(phone) {
+      width: 100vw;
+      object-fit: 100%;
+      object-position: top;
+    }
+  }
+
+}

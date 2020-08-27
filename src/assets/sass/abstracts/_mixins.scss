@@ -1,0 +1,36 @@
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin hide {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin unhide {
+  display: block;
+  visibility: visible;
+}
+
+// media queries
+
+@mixin adapt($breakpoint) {
+  @if $breakpoint == extrasmall {
+    @media (max-width: 300px) { @content; }
+  }
+  @if $breakpoint == phone {
+    @media (max-width: 600px) { @content; }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: 940px) { @content; }
+  }
+  @if $breakpoint == desktop {
+    @media (max-width: 1200px) { @content; }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 1800px) { @content; }
+  }
+}

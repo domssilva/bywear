@@ -1,0 +1,246 @@
+.header {
+  color: $white;
+  
+  & > * {
+    display: inline-block;
+  }
+
+  @include adapt(tablet) {
+    margin-top: 5rem;
+  }
+
+  @include adapt(phone) {
+    margin-top: 8rem;
+  }
+  
+  // top = header logo and search bar
+  &__top {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-size: 2rem;
+    color: $white;
+
+    @include adapt(tablet) {
+      margin-left: 1rem;
+    }
+
+    @include adapt(phone) {
+      @include hide;
+    }
+  }
+
+  &__search {
+    border-bottom: 1px solid $white;
+    flex: 0 0 60%;
+
+    padding-left: .2rem;
+    padding-bottom: .5rem;
+
+    &::placeholder {
+      color: $white;
+      font-family: inherit;
+      letter-spacing: .05rem;
+    }
+
+    @include adapt(phone) {
+      @include hide;
+    }
+  }
+
+  // header content
+  &__content {
+
+    padding-top: 10rem;
+    height: 30rem;
+
+    display: flex;
+
+    @include adapt(tablet) {
+      flex-direction: column-reverse;
+      height: 95%;
+    }
+
+    @include adapt(phone) {
+      padding-top: 2rem;
+    }
+
+  }
+
+  &__social {
+    max-width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      &:not(:last-of-type) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    &-icon {
+      box-sizing: content-box;
+      display: inline-block;
+      fill: $white;
+      transition: $svg-transition;
+    }
+
+    @include adapt(tablet) {
+      max-width: initial;
+      width: 100%;
+      flex-direction: row;
+
+      a {
+
+        margin-bottom: 5rem;
+        
+        &:not(:last-of-type) {
+          margin-right: 5rem;
+        }
+      }
+      
+    }
+  }
+
+  &__main {
+    flex: 1;
+    color: $white;
+    padding-left: 10rem;
+    
+    @include adapt(tablet) {
+      padding-left: 5rem;
+    }
+
+    @include adapt(phone) {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 600;
+
+    @include adapt(phone) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__text {
+    margin-top: 3rem;
+    max-width: 35rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    letter-spacing: .22rem;
+    font-weight: 400;
+
+    @include adapt(phone) {
+      margin: 1rem 1rem 0 1rem;
+    }
+  }
+
+  &__btn {
+    // btn style
+    display: inline-block;
+    border-radius: $border-radius;
+    padding: 1rem;
+    transition: all .4s ease-in;
+    box-sizing: border-box;
+    color: inherit;
+    background: $primary-1;
+    font-size: 1.6rem;
+    box-shadow: .3rem .6rem 1rem rgba($black, .4);
+    border: 3px solid transparent;
+    outline: transparent;
+    color: $white;
+    // btn style
+
+    width: 12rem;
+    display: block;
+    position: absolute;
+    text-align: center;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover {
+      background: transparent;
+      border: 3px solid $primary-1;
+    }
+
+    &:active {
+      transform: scale(1.02);
+    }
+    
+    @include adapt(tablet) {
+      position: unset;
+      text-align: center;
+      margin: 8rem auto;
+      left: unset;
+      transform: unset;
+    }
+
+    @include adapt(phone) {
+      margin: 6rem auto;
+    }
+  }
+
+  &__filter {
+    //background: gold;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    @include adapt(tablet) {
+      margin: auto;
+    }
+
+    @include adapt(extrasmall) {
+      flex-direction: column;
+    }
+
+    input[type=radio] {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    input[type=radio] + label:after {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-left: .5rem;
+      content: " ";
+      display:inline-block;
+      border:1px solid $primary-2;
+    }
+
+    input[type=radio]:checked + label:after {
+      background:$primary-2;
+    }
+
+    fieldset {
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
+
+      @include adapt(extrasmall) {
+        margin-bottom: 1rem;
+      }
+
+    }
+  }
+}
+
+a:hover .header__social-icon {
+  fill: $primary-1;
+}

@@ -1,0 +1,53 @@
+.orange {
+  color: $primary-1;
+}
+
+.white {
+  color: $white;
+}
+
+.center {
+  text-align: center;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: $border-radius;
+  padding: 1rem;
+  transition: all .4s ease-in;
+  box-sizing: border-box;
+  color: inherit;
+  background: $primary-1;
+  font-size: 1.6rem;
+  box-shadow: .3rem .6rem 1rem rgba($black, .4);
+  border: 3px solid transparent;
+  outline: transparent;
+
+  &--white {
+    color: $white;
+  }
+  
+  &:hover {
+      background: transparent;
+      border: 3px solid $primary-1;
+      transform: scale(1.02);
+  }
+
+  &:active {
+      transform: translateY(1.2rem);
+  }
+}
+
+.x-red {
+  font-weight: 700;
+  margin-right: 1rem;
+  color: $primary-3;
+}

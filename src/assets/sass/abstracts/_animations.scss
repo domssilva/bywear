@@ -1,0 +1,31 @@
+@keyframes slideFromRight {
+  from {
+    width: 20rem;
+  }
+
+  to {
+    width: 30rem;
+  }
+}
+  
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-300px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulseCircle {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(.8);
+  }
+}

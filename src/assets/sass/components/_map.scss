@@ -1,0 +1,9 @@
+.leafletMap {
+    height: 300px;
+    width: 500px;
+
+    @include adapt(phone) {
+        width: 90%;
+        margin: auto;
+    }
+}
