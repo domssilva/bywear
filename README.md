@@ -13,7 +13,7 @@ ___
 
 Case study to practice my react knowledge.
 
-With this project I focused on taking advantage of the browser API to make the cart data persistent.
+With this project I focused on creating the cart system by myself from scratch.
 
 Stack:
 * html
@@ -33,8 +33,8 @@ ___
 ## Setup
 
 ```
-git clone https://github.com/domssilva/web-exercises
-cd web-exercises/web/react/bywear/
+git clone https://github.com/domssilva/bywear
+cd bywear
 npm install
 npm start
 ```
